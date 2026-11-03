@@ -19,7 +19,7 @@ setCookie("date",date,365)
 setCookie("age",age,365)
 
 setTimeout(()=>{
-window.location.href="expense.html"
+window.location.href="expense.html"//page redirection
 
 },3000);
 
