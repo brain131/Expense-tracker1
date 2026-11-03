@@ -37,7 +37,7 @@ tasks=[];
 localStorage.removeItem("tasks");
 displayTasks();
 }
-    
+
  }
 
 
