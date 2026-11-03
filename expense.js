@@ -35,9 +35,17 @@ list.appendChild(card);
 if(confirm("Delete all Tasks?")){
 tasks=[];
 localStorage.removeItem("tasks");
-displayTasks();
+
 }
 
  }
+displayTasks();
+function addTasks(){
+return "Expense added"
 
+}
+function cleatTasks(){
+return "Expenses cleared"
 
+}
+module.exports={addTasks,cleatTasks}
