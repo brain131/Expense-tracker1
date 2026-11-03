@@ -37,5 +37,3 @@ document.cookie=`${name}=${encodeURIComponent(value)};${expires};path=/`
 
 
 
-
-
