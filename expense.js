@@ -31,5 +31,13 @@ list.appendChild(card);
 })
 
 }
+ function cleatTasks(){
+if(confirm("Delete all Tasks?")){
+tasks=[];
+localStorage.removeItem("tasks");
+displayTasks();
+}
+    
+ }
 
 
