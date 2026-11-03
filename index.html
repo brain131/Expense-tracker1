@@ -7,11 +7,18 @@
     <script src="script.js"></script>
 </head>
 <body>
-<form>
+
+
+<form class="form-section">
+
+   
    <div class="form-card">
         <div>
         <p id="greeting"></p>
 
+    </div>
+    <div>
+        <h1 class="">Sign in to access expense tracker</h1>
     </div>
   <div class="input-container">
         <input type="text"placeholder="username" id="name"required>
@@ -29,7 +36,7 @@
         <input type="email" placeholder="Your email address" id="email" required>
     </div>
     <div class="input-container">
-        <button type="button"onclick="display()">Submit</button>
+        <button type="button"onclick="display()" class="submit">Sign in</button>
 
     </div>
    
@@ -37,7 +44,34 @@
 
     
 </form>
+<style>
+    h1{
+font-size: 1.5rem;
 
+    }
+    .form-section{
+        display: flex;
+        justify-content: center;
+        background-color: aliceblue;
+        width:200px;
+        padding: 20px;
+        position: absolute;
+        left:50%;
+        top:20%;
+    }
+.input-container>input{
+height:40px;
+margin-bottom: 10px;
+
+}
+.submit{
+padding:10px;
+background-color:rgb(10, 57, 199);
+border:none;
+margin-top: 20px;
+color:white;
+}
+</style>
 
 </body>
 </html>
