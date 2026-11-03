@@ -26,7 +26,7 @@ list.innerHTML=""
 const tasks=JSON.parse(localStorage.getItem("tasks")||"[]");
 tasks.forEach(task=>{
 const card=document.createElement("div");
-card.innerHTML=`<h3>${task.amount} ${ task.description} ${ task.category}</h3>`
+card.innerHTML=`<p class="list.card">${task.amount} ${ task.description} ${ task.category}</p>`
 list.appendChild(card);
 })
 
