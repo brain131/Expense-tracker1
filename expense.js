@@ -27,8 +27,8 @@ list.innerHTML=""
 const tasks=JSON.parse(localStorage.getItem("tasks")||"[]");
 tasks.forEach(task=>{
 const card=document.createElement("div");
-card.innerHTML=`<p class="list.card">${task.amount}</p> 
-    <p>${ task.description}</p> <p>${ task.category}</p><button class="delete-Btn" onclick="deleteTask(${task.id})">Delete </button>`
+card.innerHTML=`<div class="details">  <p>${ task.description}</p><p class="list.card">${task.amount}</p> 
+   <p>${ task.category}</p><button class="delete-Btn" onclick="deleteTask(${task.id})">Delete </button></div>`
 list.appendChild(card);
 })
 
