@@ -5,7 +5,6 @@ this.amount=amount;
 this.description=description
 this.category=category
 
-
 }
 
 }
@@ -28,6 +27,12 @@ function displayTasks(filterCategory = "all"){
 const list=document.getElementById("expense");
 list.innerHTML=""
 const tasks=JSON.parse(localStorage.getItem("tasks")||"[]");
+let total =0;
+tasks.forEach(task=>{
+total +=Number(task.amount)
+
+})
+document.getElementById("totalExpenses").innerHTML=total;
 const filteredTasks=tasks.filter(task=>{
 if (filterCategory ==="all")return true
 return task.category.toLowerCase()===filterCategory.toLowerCase();
