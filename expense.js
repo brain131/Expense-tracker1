@@ -16,21 +16,35 @@ const category=document.getElementById("category").value.trim();
 
 const tasks=new ExpenseTracker(Date.now(),description,amount,category);
 const task=JSON.parse(localStorage.getItem("tasks")||"[]");
-task.push(tasks,);
+task.push(tasks);
 localStorage.setItem("tasks",JSON.stringify(task));
+const filterDropdown=document.getElementById("category-Filter");
+if(filterDropdown) filterDropdown.value="all"
 displayTasks();
 }
 displayTasks();
-function displayTasks(){
+
+function displayTasks(filterCategory = "all"){
 const list=document.getElementById("expense");
 list.innerHTML=""
 const tasks=JSON.parse(localStorage.getItem("tasks")||"[]");
-tasks.forEach(task=>{
+const filteredTasks=tasks.filter(task=>{
+if (filterCategory ==="all")return true
+return task.category.toLowerCase()===filterCategory.toLowerCase();
+
+});
+
+filteredTasks.forEach(task=>{
 const card=document.createElement("div");
 card.innerHTML=`<div class="details">  <p>${ task.description}</p><p class="list.card">${task.amount}</p> 
    <p>${ task.category}</p><button class="delete-Btn" onclick="deleteTask(${task.id})">Delete </button></div>`
 list.appendChild(card);
 })
+
+}
+function filterTask(){
+const category=document.getElementById("category-Filter").value;
+displayTasks(category);
 
 }
  function clearTasks(){
