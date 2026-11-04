@@ -1,15 +1,16 @@
 .form-section{
 position: absolute;
-left: 50%;
+left: 35%;
 top:20%;
 background-color: aliceblue;
 padding:30px;
+width:500px;
 
 }
 div>input{
 margin-bottom: 2rem;
 height:50px;
-
+width:300px;
 }
 #category{
 height: 50px;
@@ -45,10 +46,11 @@ background-color: rgb(242, 14, 14);
 color:white;
 padding:8px;
 border:none;
-
+margin-bottom: 2rem;
 
 }
 .details{
 display: flex;
 gap:1rem;
+border-bottom: 1px solid black;
 }
