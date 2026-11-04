@@ -1,4 +1,4 @@
-class TaskManager{
+class ExpenseTracker{
 constructor(description,amount,category){
 this.amount=amount;
 this.description=description
@@ -13,7 +13,7 @@ const description=document.getElementById("description").value.trim();
 const amount=document.getElementById("amount").value.trim();
 const category=document.getElementById("category").value.trim();
 
-const tasks=new TaskManager(description,amount,category);
+const tasks=new ExpenseTracker(description,amount,category);
 const task=JSON.parse(localStorage.getItem("tasks")||"[]");
 task.push(tasks);
 localStorage.setItem("tasks",JSON.stringify(task));
@@ -40,6 +40,7 @@ localStorage.removeItem("tasks");
 
  }
 displayTasks();
+
 function addTasks(){
 return "Expense added"
 
