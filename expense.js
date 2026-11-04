@@ -69,5 +69,13 @@ localStorage.setItem("tasks",JSON.stringify(tasks));
 displayTasks()
 }
 
+function calculateTotal(tasks){
+let total=0;
+tasks.forEach(task=>{
+total +=Number(task.amount)
 
+});
+return total;
+
+}
 
