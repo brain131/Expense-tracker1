@@ -3,75 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home sign in</title>
-    <script src="script.js"></script>
+    <title>Expense Tracker</title>
+    <script src="script.js" ></script>
+   <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-
-
-<form class="form-section">
-
-   
-   <div class="form-card">
-        <div>
-        <p id="greeting"></p>
+<section class="form-section">
+    <div class="form-wrapper">
+         <form action="" class="form">
+        
+    <div>
+        <input type="text" id="description" placeholder="Description">
+        
+    </div>
+    <div>
+        <input type="Number" id="amount" placeholder="Amount">
+    </div>
+    <div>
+        <select name="" id="category">
+            <option value="">Select category</option>
+            <option value="food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+        </select>
+    </div>
+    <div>
+        <select id="category-Filter" onclick="filterTask()">
+            <option value="all">All categories</option>
+            <option value="food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+        </select>
 
     </div>
     <div>
-        <h1 class="">Sign in to access expense tracker</h1>
-    </div>
-  <div class="input-container">
-        <input type="text"placeholder="username" id="name"required>
-    </div>
-     <div class="input-container">
-        <input type="text"placeholder="age" id="age"required>
-    </div>
-     <div class="input-container">
-        <input type="date"placeholder="Date of birth" id="date"required>
-    </div>
-     <div class="input-container">
-        <input type="number"placeholder="contact" id="contact"required>
+    <button type="button" onclick="addTask()" class="addTask">Add Task</button>
     </div>
     <div>
-        <input type="email" placeholder="Your email address" id="email" required>
+        <button onclick="clearTasks()" class="clearTask">Clear all</button>
     </div>
-    <div class="input-container">
-        <button type="button"onclick="display()" class="submit">Sign in</button>
-
+    <div id="expense-card">
+        <div id="expense"></div>
     </div>
-   
+    <div>
+        
+        <h2>Total expenses</h2>
+        <h2 id="totalExpenses"></h2>
+    </div>
+    </form>
     </div>
 
-    
-</form>
-<style>
-    h1{
-font-size: 1.5rem;
-
-    }
-    .form-section{
-        display: flex;
-        justify-content: center;
-        background-color: aliceblue;
-        width:200px;
-        padding: 20px;
-        position: absolute;
-        left:50%;
-        top:20%;
-    }
-.input-container>input{
-height:40px;
-margin-bottom: 10px;
-
-}
-.submit{
-padding:10px;
-background-color:rgb(10, 57, 199);
-border:none;
-margin-top: 20px;
-color:white;
-}
-</style>
+</section>
 
 </body>
 </html>
