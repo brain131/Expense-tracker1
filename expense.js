@@ -1,5 +1,6 @@
 class ExpenseTracker{
-constructor(description,amount,category){
+constructor(id,description,amount,category){
+this.id=id
 this.amount=amount;
 this.description=description
 this.category=category
@@ -13,9 +14,9 @@ const description=document.getElementById("description").value.trim();
 const amount=document.getElementById("amount").value.trim();
 const category=document.getElementById("category").value.trim();
 
-const tasks=new ExpenseTracker(description,amount,category);
+const tasks=new ExpenseTracker(Date.now(),description,amount,category);
 const task=JSON.parse(localStorage.getItem("tasks")||"[]");
-task.push(tasks);
+task.push(tasks,);
 localStorage.setItem("tasks",JSON.stringify(task));
 displayTasks();
 }
@@ -26,27 +27,28 @@ list.innerHTML=""
 const tasks=JSON.parse(localStorage.getItem("tasks")||"[]");
 tasks.forEach(task=>{
 const card=document.createElement("div");
-card.innerHTML=`<p class="list.card">${task.amount} ${ task.description} ${ task.category}</p>`
+card.innerHTML=`<p class="list.card">${task.amount}</p> 
+    <p>${ task.description}</p> <p>${ task.category}</p><button class="delete-Btn" onclick="deleteTask(${task.id})">Delete </button>`
 list.appendChild(card);
 })
 
 }
- function cleatTasks(){
+ function clearTasks(){
 if(confirm("Delete all Tasks?")){
 tasks=[];
 localStorage.removeItem("tasks");
 
 }
-
- }
 displayTasks();
+ }
 
-function addTasks(){
-return "Expense added"
 
+function deleteTask(id){
+let tasks=JSON.parse(localStorage.getItem("tasks")|| "[]");
+tasks=tasks.filter(task=>task.id !==id)
+localStorage.setItem("tasks",JSON.stringify(tasks));
+displayTasks()
 }
-function cleatTasks(){
-return "Expenses cleared"
 
-}
-module.exports={addTasks,cleatTasks}
+
+
